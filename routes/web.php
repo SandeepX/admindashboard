@@ -18,18 +18,21 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'welcomeController@index');
+
 
 Route::group(['middleware' => 'auth'], function (){
 	Route::get('/dashboard', function () {
 	    return view('admin.dashboard');
 	});
 
-	Route::get('/profile', function () {
-	    return view('admin.profile');
-	});
+
+Route::prefix('profile')->group(function () {
+	Route::get('/', 'ProfileController@index');
+	Route::post('/store', 'ProfileController@store')->name('imageUpload');
+	Route::get('/view-Image', 'ProfileController@show');
+});	
+
 
 	Route::get('/gallery', function () {
 	    return view('admin.gallery');
