@@ -22,7 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::group(['middleware' => 'auth'], function (){
 	Route::get('/dashboard', function () {
 	    return view('admin.dashboard');
 	});
@@ -47,3 +47,5 @@ Route::get('/', function () {
 	Route::get('/contact', function () {
 	    return view('admin.contact');
 	});
+
+});
