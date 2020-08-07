@@ -14,10 +14,10 @@
                     <div class="col-xl-6 col-md-6">
                         <div class="socail_links">
                             <ul>
-                                <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
-                                <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
-                                <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
-                                <li><a href="#"> <i class="fa fa-google-plus"></i> </a></li>
+                                <li><a href="https://www.facebook.com/sandeep.pant.3701"> <i class="fa fa-facebook"></i> </a></li>
+                                
+                                <li><a href="https://www.instagram.com/sandeep_pant23/">  <i class="fa fa-instagram"></i> </a></li>
+                                
                             </ul>
                         </div>
                     </div>

@@ -10,7 +10,7 @@
                         <div class="col-xl-3 col-lg-2">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="img/logo.png" alt="">
+                                    <img src="" alt="">
                                 </a>
                             </div>
                         </div>
@@ -21,18 +21,7 @@
                                         <li><a class="active" href="index.html">home</a></li>
                                         <li><a href="about.html">About</a></li>
                                         <li><a href="services.html">Services</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                 <li><a href="portfolio.html">Portfolio</a></li>
-                                                 <li><a href="elements.html">elements</a></li>
-                                            </ul>
-                                        </li>
+                                        
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -58,15 +47,15 @@
 
     <!-- slider_area_start -->
     <div class="slider_area">
-        <div class="single_slider  d-flex align-items-center slider_bg_1">
+        <div class="single_slider  d-flex align-items-center slider_bg_1" style="background-image: url( {{ asset('sandeep/img/about/man.jpg') }} );">
             <div class="shap_pattern d-none d-lg-block">
-                <img src="img/about/grid.png" alt="">
+                <img src="{{asset('/sandeep/img/about/grid.png')}}" alt="">
             </div>
             <div class="social_links">
                 <ul>
-                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
-                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
-                    <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                    <li><a href="https://www.facebook.com/sandeep.pant.3701"> <i class="fa fa-facebook"></i> </a></li>
+                    
+                    <li><a href="https://www.instagram.com/sandeep_pant23/"> <i class="fa fa-instagram"></i> </a></li>
                 </ul>
             </div>
             <div class="container">
@@ -76,7 +65,7 @@
                             <h3>
                                 Hello This is sandeep pant
                             </h3>
-                            <span>Laravel web develoer</span>
+                            <span>Laravel web developer</span>
                         </div>
                     </div>
                 </div>
@@ -101,7 +90,7 @@
                 <div class="col-xl-4 col-md-4">
                     <div class="single_service text-center">
                         <div class="icon">
-                            <img src="img/svg_icon/1.svg" alt="">
+                            <img src="{{asset('/sandeep/img/svg_icon/1.svg')}}" alt="">
                         </div>
                         <h3>Graphic design</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
@@ -110,7 +99,7 @@
                 <div class="col-xl-4 col-md-4">
                     <div class="single_service text-center">
                         <div class="icon">
-                            <img src="img/svg_icon/2.svg" alt="">
+                            <img src="{{asset('/sandeep/img/svg_icon/2.svg')}}" alt="">
                         </div>
                         <h3>Web design</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
@@ -119,7 +108,7 @@
                 <div class="col-xl-4 col-md-4">
                     <div class="single_service text-center">
                         <div class="icon">
-                            <img src="img/svg_icon/3.svg" alt="">
+                            <img src="{{asset('/sandeep/img/svg_icon/3.svg')}}" alt="">
                         </div>
                         <h3>Mobile app</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
