@@ -1,5 +1,7 @@
 @extends('layout.admin')
 
+@section('title','Posts')
+
 @section('main-content')
   <section class="content">
           <div class="container">

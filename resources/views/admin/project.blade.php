@@ -1,4 +1,5 @@
 @extends('layout.admin')
+@section('title','Project completed')
 
 @section('main-content')
   <section class="content">

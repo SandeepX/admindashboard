@@ -1,6 +1,9 @@
 @extends('layout.admin')
 
+@section('title','Admin dashboard')
+
 @section('main-content')
+
   <section class="content">
           <div class="container-fluid">
             <!-- Small boxes (Stat box) -->

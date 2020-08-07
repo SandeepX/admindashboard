@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth'], function (){
 
 
 Route::prefix('profile')->group(function () {
-	Route::get('/', 'ProfileController@index');
+	Route::get('/', 'ProfileController@index')->name('profile');
 	Route::post('/store', 'ProfileController@store')->name('imageUpload');
 	Route::get('/view-Image', 'ProfileController@show');
 });	

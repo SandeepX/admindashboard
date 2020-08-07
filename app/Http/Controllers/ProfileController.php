@@ -46,8 +46,14 @@ class ProfileController extends Controller
 	                'url' => $file_name,
 	                'work' =>$validated['work'],
 	            ]);
-	            Session::flash('success', "Success!");
-	            return \Redirect::back();
+				if($file){
+					$request->session()->flash('success','profile added successfully');
+				}else{
+					$request->session()->flash('error','opps! profile not uploaded');
+				}
+				
+	            return redirect()->route('profile');
+	           
 	        }
 	    }
 	    abort(500, 'Could not upload image :(');
