@@ -8,8 +8,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
    
-    
-   @yield('main-content')
+    @include('admin.dashboard')
     
   </div>
 @include('admin.footer')

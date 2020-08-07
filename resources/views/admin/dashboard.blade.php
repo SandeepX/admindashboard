@@ -1,8 +1,6 @@
+@extends('layout.admin')
 
-@extends('layout.Sadmin')
-
-@section ('main-content')
-
+@section('main-content')
   <section class="content">
           <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
@@ -125,7 +123,8 @@
             </div>
           </div>
   </section>
+@endsection  
 
-@endsection
+
 
   
