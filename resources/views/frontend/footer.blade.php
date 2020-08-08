@@ -5,9 +5,9 @@
                     <div class="col-xl-6 col-md-6">
                         <div class="menu_links">
                             <ul>
-                                <li><a href="#">About</a></li>
+                                <li><a href="{{url('/about')}}">About</a></li>
                                 <li><a href="#">Services</a></li>
-                                <li><a href="#">Portfolio</a></li>
+                                <li><a href="{{route('mainHome')}}">Portfolio</a></li>
                             </ul>
                         </div>
                     </div>

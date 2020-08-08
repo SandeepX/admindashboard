@@ -43,8 +43,8 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a class="active" href="{{route('mainHome')}}"><strong style="color: blue;">home</strong></a></li>
-                                        <li><a href="about.html"><strong  style="color: blue;">About</strong></a></li>
-                                        <li><a href="services.html"><strong  style="color: blue;">Services</strong></a></li>
+                                        <li><a href="{{url('/about')}}"><strong  style="color: blue;">About</strong></a></li>
+                                        
                                         
                                         <li><a href="{{route('viewGallery')}}"><strong  style="color: blue;">Gallery</strong></a></li>
                                         <li> <a  href="{{route('ContactMe')}}"><strong  style="color: blue;">Contact Me</strong></a></li>

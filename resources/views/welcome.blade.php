@@ -101,7 +101,7 @@
                 <div class="col-xl-5 col-md-5">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
-                            <img src="img/portfolio/1.png" alt="">
+                            <img src="{{ asset('uploads/profile/') }}/{{$profiledetail->url}}" alt="">
                         </div>
                         <a href="img/portfolio/1.png" class="popup popup-image"></a>
                         <div class="portfolio_hover">
@@ -114,7 +114,7 @@
                 <div class="col-xl-7 col-md-7">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
-                            <img src="img/portfolio/2.png" alt="">
+                            <img src="{{ asset('uploads/profile/') }}/{{$profiledetail->url}}" alt="">
                         </div>
                         <a href="img/portfolio/2.png" class="popup popup-image"></a>
                         <div class="portfolio_hover">
@@ -127,7 +127,7 @@
                 <div class="col-xl-4 col-md-6 col-lg-4">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
-                            <img src="img/portfolio/3.png" alt="">
+                            <img src="{{ asset('uploads/profile/') }}/{{$profiledetail->url}}" alt="">
                         </div>
                         <a href="img/portfolio/3.png" class="popup popup-image"></a>
                         <div class="portfolio_hover">
@@ -140,7 +140,7 @@
                 <div class="col-xl-4 col-md-6 col-lg-4">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
-                            <img src="img/portfolio/4.png" alt="">
+                            <img src="{{ asset('uploads/profile/') }}/{{$profiledetail->url}}" alt="">
                         </div>
                         <a href="img/portfolio/4.png" class="popup popup-image"></a>
                         <div class="portfolio_hover">
@@ -153,7 +153,7 @@
                 <div class="col-xl-4 col-md-12 col-lg-4">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
-                            <img src="img/portfolio/5.png" alt="">
+                            <img src="{{ asset('uploads/profile/') }}/{{$profiledetail->url}}" alt="">
                         </div>
                         <a href="img/portfolio/5.png" class="popup popup-image"></a>
                         <div class="portfolio_hover">
@@ -184,20 +184,23 @@
             <div class="row align-items-center">
                 <div class="col-xl-6 col-md-6">
                     <div class="about_e_details">
-                        <h3>About me</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida Risus com odo viverra maecenas.</p>
+                        <h3>About Sandeep</h3>
+                        <p>
+                            While I am kind of a jill-of-all-trades in the creative industry, I specialize in laravel web development & front-end development . I've been in the  web development scene for 3 years. Many of my peers call me a passionate perfectionist. Hmm, I think you should try working with me and see? ;-).
+                        </p>
+
                         <div class="download_cv">
-                            <a class="boxed-btn3" href="#">Download CV</a>
+                            <a class="boxed-btn3" href="{{url('/download')}}">Download CV</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-6 col-md-6">
                     <div class="about_img">
                         <div class="color_pattern d-none d-lg-block">
-                            <img src="img/about/color_grid.png" alt="">
+                            <img src="" alt="">
                         </div>
                         <div class="my_Pic">
-                                <img src="img/about/about.png" alt="">
+                                <img src="{{ asset('uploads/profile/') }}/{{$profiledetail->url}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -243,61 +246,61 @@
                     <div class="col-xl-12">
                         <div class="testmonial_active owl-carousel">
                             <div class="single_carousel">
-                                    <div class="single_testmonial text-center">
-                                            <div class="quote">
-                                                <img src="img/testmonial/quote.svg" alt="">
-                                            </div>
-                                            <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br> 
-                                                    sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.  <br>
-                                                    Fusce ac mattis nulla. Morbi eget ornare dui. </p>
-                                            <div class="testmonial_author">
-                                                <div class="thumb">
-                                                        <img src="img/testmonial/thumb.png" alt="">
-                                                </div>
-                                                <h3>Robert Thomson</h3>
-                                                <span>Business Owner</span>
-                                            </div>
+                                <div class="single_testmonial text-center">
+                                    <div class="quote">
+                                        <img src="img/testmonial/quote.svg" alt="">
+                                    </div>
+                                    <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br> 
+                                            sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.  <br>
+                                            Fusce ac mattis nulla. Morbi eget ornare dui. </p>
+                                    <div class="testmonial_author">
+                                        <div class="thumb">
+                                                <img src="img/testmonial/thumb.png" alt="">
                                         </div>
+                                        <h3>Robert Thomson</h3>
+                                        <span>Business Owner</span>
+                                    </div>
+                                </div>
                             </div>
                             <div class="single_carousel">
-                                    <div class="single_testmonial text-center">
-                                            <div class="quote">
-                                                <img src="img/testmonial/quote.svg" alt="">
-                                            </div>
-                                            <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br> 
-                                                    sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.  <br>
-                                                    Fusce ac mattis nulla. Morbi eget ornare dui. </p>
-                                            <div class="testmonial_author">
-                                                <div class="thumb">
-                                                        <img src="img/testmonial/thumb.png" alt="">
-                                                </div>
-                                                <h3>Robert Thomson</h3>
-                                                <span>Business Owner</span>
-                                            </div>
+                                <div class="single_testmonial text-center">
+                                    <div class="quote">
+                                        <img src="img/testmonial/quote.svg" alt="">
+                                    </div>
+                                    <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br> 
+                                            sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.  <br>
+                                            Fusce ac mattis nulla. Morbi eget ornare dui. </p>
+                                    <div class="testmonial_author">
+                                        <div class="thumb">
+                                                <img src="img/testmonial/thumb.png" alt="">
                                         </div>
+                                        <h3>Robert Thomson</h3>
+                                        <span>Business Owner</span>
+                                    </div>
+                                </div>
                             </div>
                             <div class="single_carousel">
-                                    <div class="single_testmonial text-center">
-                                            <div class="quote">
-                                                <img src="img/testmonial/quote.svg" alt="">
-                                            </div>
-                                            <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br> 
-                                                    sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.  <br>
-                                                    Fusce ac mattis nulla. Morbi eget ornare dui. </p>
-                                            <div class="testmonial_author">
-                                                <div class="thumb">
-                                                        <img src="img/testmonial/thumb.png" alt="">
-                                                </div>
-                                                <h3>Robert Thomson</h3>
-                                                <span>Business Owner</span>
-                                            </div>
+                                <div class="single_testmonial text-center">
+                                    <div class="quote">
+                                        <img src="img/testmonial/quote.svg" alt="">
+                                    </div>
+                                    <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor <br> 
+                                            sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.  <br>
+                                            Fusce ac mattis nulla. Morbi eget ornare dui. </p>
+                                    <div class="testmonial_author">
+                                        <div class="thumb">
+                                                <img src="img/testmonial/thumb.png" alt="">
                                         </div>
+                                        <h3>Robert Thomson</h3>
+                                        <span>Business Owner</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
         <!-- /testimonial_area  -->
     
     <div class="discuss_projects">

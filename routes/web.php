@@ -18,6 +18,19 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // <----frontend route------>
+Route::get('/download', function(){
+	$file = public_path()."/sandeep.docx";
+	$headers =array(
+		'content_Type: application/docx',
+
+	);
+	return Response::download($file,"sandeep.docx",$headers);
+});
+
+Route::get('/about',function(){
+	return view('frontend.about');
+});
+
 Route::get('/', 'welcomeController@index')->name('mainHome');
 Route::get('/viewImage', 'welcomeController@galleryshow')->name('viewGallery');
 
