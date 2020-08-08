@@ -17,8 +17,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// <----frontend route------>
+Route::get('/', 'welcomeController@index')->name('mainHome');
+Route::get('/viewImage', 'welcomeController@galleryshow')->name('viewGallery');
 
-Route::get('/', 'welcomeController@index');
+
+Route::get('/ContactMe','ContactController@index')->name('ContactMe');
+Route::post('/ContactMe/store','ContactController@store')->name('contactfront');
+
 
 
 Route::group(['middleware' => 'auth'], function (){
@@ -31,12 +37,15 @@ Route::prefix('profile')->group(function () {
 	Route::get('/', 'ProfileController@index')->name('profile');
 	Route::post('/store', 'ProfileController@store')->name('imageUpload');
 	Route::get('/view-Image', 'ProfileController@show');
-});	
+});
 
 
-	Route::get('/gallery', function () {
-	    return view('admin.gallery');
-	});
+Route::prefix('/gallery')->group(function () {
+	Route::get('/', 'GalleryController@index')->name('gallery');
+	Route::post('/store','GalleryController@store')->name('imageuploadgallery');
+
+});
+	
 
 	Route::get('/post', function () {
 	    return view('admin.post');

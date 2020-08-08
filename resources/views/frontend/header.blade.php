@@ -4,14 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Phenomenal Sandeep</title>
+    <title>Portfolio Sandeep</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- CSS here -->
+   
     <link rel="stylesheet" href="{{asset('sandeep/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('sandeep/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('sandeep/css/magnific-popup.css')}}">
@@ -24,7 +21,7 @@
     <link rel="stylesheet" href="{{asset('sandeep/css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('sandeep/css/slicknav.css')}}">
     <link rel="stylesheet" href="{{asset('sandeep/css/style.css')}}">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <link rel="stylesheet" href="{{asset('sandeep/css/responsive.css')}}">
 </head>
 
 <body>
@@ -45,22 +42,25 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="index.html">home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="services.html">Services</a></li>
+                                        <li><a class="active" href="{{route('mainHome')}}"><strong style="color: blue;">home</strong></a></li>
+                                        <li><a href="about.html"><strong  style="color: blue;">About</strong></a></li>
+                                        <li><a href="services.html"><strong  style="color: blue;">Services</strong></a></li>
                                         
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="{{route('viewGallery')}}"><strong  style="color: blue;">Gallery</strong></a></li>
+                                        <li> <a  href="{{route('ContactMe')}}"><strong  style="color: blue;">Contact Me</strong></a></li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
+
                         <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
-                                    <a  href="#">Contact Me</a>
+                                    <a  href="{{route('ContactMe')}}">Contact Me</a>
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
