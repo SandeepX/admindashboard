@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('sandeep/css/slicknav.css')}}">
     <link rel="stylesheet" href="{{asset('sandeep/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('sandeep/css/responsive.css')}}">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>

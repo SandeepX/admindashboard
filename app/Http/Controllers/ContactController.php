@@ -4,10 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contact;
+use Mapper;
 
 class ContactController extends Controller
 {
     public function index(){
+
+        Mapper::map(
+            27.717245,
+            85.323959,
+             [
+                'zoom'=>16,
+                'draggable'=>true,
+                'marker'=>false,
+                'eventAfterLoad' =>
+                'circleListener(maps[0].shapes[0].circle_0);'
+             ]
+         );
 
     	return view('frontend.contact');
     }

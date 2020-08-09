@@ -2,9 +2,15 @@
 
    
   <div class="container-fluid">
+
+		
+
+
 		<section class="mb-4">
 
-		   
+		   	<div style="width: 500px; height: 500px; margin-left: 200px">
+				{!! Mapper::render() !!}
+			</div>
 		    	
 		   		 <h2 class="h1-responsive font-weight-bold text-center my-4">Contact Me!!</h2>
 
