@@ -39,6 +39,8 @@ Route::get('/ContactMe','ContactController@index')->name('ContactMe');
 Route::post('/ContactMe/store','ContactController@store')->name('contactfront');
 
 
+//*****************-Backend routes-******************
+
 
 Route::group(['middleware' => 'auth'], function (){
 	Route::get('/dashboard', function () {
@@ -46,18 +48,18 @@ Route::group(['middleware' => 'auth'], function (){
 	});
 
 
-Route::prefix('profile')->group(function () {
-	Route::get('/', 'ProfileController@index')->name('profile');
-	Route::post('/store', 'ProfileController@store')->name('imageUpload');
-	Route::get('/view-Image', 'ProfileController@show');
-});
+	Route::prefix('profile')->group(function () {
+		Route::get('/', 'ProfileController@index')->name('profile');
+		Route::post('/store', 'ProfileController@store')->name('imageUpload');
+		Route::get('/view-Image', 'ProfileController@show');
+	});
 
 
-Route::prefix('/gallery')->group(function () {
-	Route::get('/', 'GalleryController@index')->name('gallery');
-	Route::post('/store','GalleryController@store')->name('imageuploadgallery');
+	Route::prefix('/gallery')->group(function () {
+		Route::get('/', 'GalleryController@index')->name('gallery');
+		Route::post('/store','GalleryController@store')->name('imageuploadgallery');
 
-});
+	});
 	
 
 	Route::get('/post', function () {
@@ -69,8 +71,8 @@ Route::prefix('/gallery')->group(function () {
 	    return view('admin.project');
 	});
 
-	Route::get('/contact', function () {
-	    return view('admin.contact');
-	});
+	Route::get('/contact', 'AdmincontactController@index')->name('contact');
+	Route::delete('/contact/destroy/{id}','AdmincontactController@destroy')->name('contactdelete');
+	
 
 });
