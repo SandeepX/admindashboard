@@ -187,19 +187,27 @@
               <li class="nav-item">
                 <a href="{{('/gallery')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Gallery</p>
+                  <p> Upload Image </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{('/video')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Upload Video </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{('/project')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Project completed</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{('/post')}}" class="nav-link">
+                <a href="{{url('/blog')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Posts</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/projects')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>project completed</p>
+                  <p>Blog</p>
                 </a>
               </li>
               

@@ -45,35 +45,31 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_service text-center">
-                        <div class="icon">
-                            <img src="{{asset('/sandeep/img/svg_icon/1.svg')}}" alt="">
-                        </div>
-                        <h3>Graphic design</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
+
+                @if(isset($projectdetail))
+                    <div class="row">
+                        @foreach($projectdetail as $key =>$value)
+                                
+                            <div class="col-xl-4 col-md-4">
+                                <div class="single_service text-center">
+                                    
+                                    <h3>{{ucfirst($value->title)  }}</h3>
+
+                                    <div>
+                                    
+                                       <p> {{ $value->description }} </p>
+                                    </div> 
+
+                                    <div>
+                                       
+                                        <a href="{{ $value->link}}"><b>click here for code</b></a> 
+
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_service text-center">
-                        <div class="icon">
-                            <img src="{{asset('/sandeep/img/svg_icon/2.svg')}}" alt="">
-                        </div>
-                        <h3>Web design</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_service text-center">
-                        <div class="icon">
-                            <img src="{{asset('/sandeep/img/svg_icon/3.svg')}}" alt="">
-                        </div>
-                        <h3>Web development</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
-                    </div>
-                </div>
-            </div>
+                @endif
         </div>
     </div>
     <!--/ service_area  -->
@@ -84,7 +80,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title white_text text-center">
-                        <span>Portfolios</span>
+                        <span> Phenomenal Portfolios</span>
                         <h3>Some of my awesome <br>
                                 stuffs here</h3>
                     </div>
@@ -94,85 +90,62 @@
     </div>
     <!--/ portfolio_area -->
 
-    <!-- portfolio_image_area  -->
-    <div class="portfolio_image_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-5 col-md-5">
-                    <div class="single_Portfolio">
-                        <div class="portfolio_thumb">
-                            <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
-                        </div>
-                        <a href="img/portfolio/1.png" class="popup popup-image"></a>
-                        <div class="portfolio_hover">
-                            <div class="title">
-                                    <h3>Product Design</h3>
+    <!-- portfolio_video_area  -->
+
+        <div class="portfolio_image_area">
+            <div class="container">
+
+                <div class="row">
+                    @if(isset($videodata))
+                        @foreach($videodata as $video)
+                            <div class="col-md-6">
+
+                                <div class="single_Portfolio">
+                                    <div class="portfolio_thumb">
+                                        <iframe src="{{ asset('uploads/video/') }}/{{$video->filename}}" width="500" height="500"></iframe>
+                                    </div>
+                                </div>
+                                
                             </div>
+                        @endforeach
+                    @endif
+
+    <!--end portfolio_video_area  --> 
+       
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="single_Portfolio">
+                            <div class="portfolio_thumb">
+                                <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="single_Portfolio">
+                            <div class="portfolio_thumb">
+                                <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-12 col-lg-4">
+                        <div class="single_Portfolio">
+                            <div class="portfolio_thumb">
+                                <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-7 col-md-7">
-                    <div class="single_Portfolio">
-                        <div class="portfolio_thumb">
-                            <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="more_portfolio text-center">
+                            <a class="line_btn" href="#">More Folio</a>
                         </div>
-                        <a href="img/portfolio/2.png" class="popup popup-image"></a>
-                        <div class="portfolio_hover">
-                            <div class="title">
-                                    <h3>Product Design</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-lg-4">
-                    <div class="single_Portfolio">
-                        <div class="portfolio_thumb">
-                            <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
-                        </div>
-                        <a href="img/portfolio/3.png" class="popup popup-image"></a>
-                        <div class="portfolio_hover">
-                            <div class="title">
-                                    <h3>Product Design</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-lg-4">
-                    <div class="single_Portfolio">
-                        <div class="portfolio_thumb">
-                            <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
-                        </div>
-                        <a href="img/portfolio/4.png" class="popup popup-image"></a>
-                        <div class="portfolio_hover">
-                            <div class="title">
-                                    <h3>Product Design</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-12 col-lg-4">
-                    <div class="single_Portfolio">
-                        <div class="portfolio_thumb">
-                            <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
-                        </div>
-                        <a href="img/portfolio/5.png" class="popup popup-image"></a>
-                        <div class="portfolio_hover">
-                            <div class="title">
-                                    <h3>Product Design</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="more_portfolio text-center">
-                        <a class="line_btn" href="#">More Folio</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     <!--/ portfolio_image_area  -->
 
     <!-- about_me  -->
@@ -186,7 +159,7 @@
                     <div class="about_e_details">
                         <h3>About Sandeep</h3>
                         <p>
-                            While I am kind of a jill-of-all-trades in the creative industry, I specialize in laravel web development & front-end development . I've been in the  web development scene for 3 years. Many of my peers call me a passionate perfectionist. Hmm, I think you should try working with me and see? ;-).
+                            {!! $aboutdata !!}
                         </p>
 
                         <div class="download_cv">

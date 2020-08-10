@@ -18,28 +18,29 @@
             </tr>
           </thead>
           <tbody>
-    @if(isset($messages))
-            @foreach($messages as $key=>$detail)
-              <tr>
-                <th scope="row">{{$detail->name}}</th>
-                <td>{{$detail->email}}</td>
-                <td>{{$detail->subject}}</td>
-                <td><p>{{$detail->message}}<p></td>
-                <td>
-                  <form class="m-2" method="post" action="{{route('contactdelete', $detail->id)}}">
-                    @csrf
-                    @method('delete')
+            @if(isset($messages))
+              @foreach($messages as $key=>$detail)
+                <tr>
+                  <th scope="row">{{$detail->name}}</th>
+                  <td>{{$detail->email}}</td>
+                  <td>{{$detail->subject}}</td>
+                  <td><p>{{$detail->message}}<p></td>
+                  <td>
+                    <form class="m-2" method="post" action="{{route('contactdelete', $detail->id)}}" onclick="return confirm('Are you sure?')">
+                      @csrf
+                      @method('delete')
 
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                      <button type="submit" class="btn btn-danger">Delete</button>
 
-                  </form>
-              </td>
+                    </form>
+                  </td>
 
-              </tr>
-            @endforeach
-          </tbody>
-      </table>
-    @endif      
+                </tr>
+              @endforeach
+            @endif 
+          </tbody>    
+        </table>
+               
   </section>
 @endsection  
 

@@ -63,15 +63,26 @@ Route::group(['middleware' => 'auth'], function (){
 		Route::post('/store','GalleryController@store')->name('imageuploadgallery');
 
 	});
+
+	
+	Route::resource('/video', 'VideoController');
+
+	
 	
 
-	Route::get('/post', function () {
-	    return view('admin.post');
-	});
+
+	/***********project************/
+	
+
+	Route::resource('/project', 'ProjectController');
+	
 
 
-	Route::get('/projects', function () {
-	    return view('admin.project');
+
+	// -----------blog-----------
+
+	Route::get('/blog', function () {
+	    return view('admin.Blog');
 	});
 
 	Route::get('/contact', 'AdmincontactController@index')->name('contact');
