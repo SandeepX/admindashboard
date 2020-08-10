@@ -1,12 +1,10 @@
 @include('frontend.header')
 
 
-    @foreach($profile as $profiledetail)
-
-     @endforeach
+@if(isset($profile))    
     <!-- slider_area_start -->
     <div class="slider_area">
-        <div class="single_slider  d-flex align-items-center slider_bg_1" style="background-image: url( {{ asset('uploads/profile/') }}/{{$profiledetail->url}} );">
+        <div class="single_slider  d-flex align-items-center slider_bg_1" style="background-image: url( {{ asset('uploads/profile/') }}/{{$profile[0]->url}} );">
             <div class="shap_pattern d-none d-lg-block">
                 <img src="{{asset('/sandeep/img/about/grid.png')}}" alt="">
             </div>
@@ -22,15 +20,17 @@
                     <div class="col-xl-12">
                         <div class="slider_text text-center">
                             <h3>
-                                Hello This is {{ $profiledetail->name }}
+                                Hello This is {{ $profile[0]->name }}
                             </h3>
-                            <span>{{ $profiledetail->work}}</span>
+                            <span>{{ $profile[0]->work}}</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+@endif    
     <!-- slider_area_end -->
 
     <!-- service_area  -->
@@ -69,7 +69,7 @@
                         <div class="icon">
                             <img src="{{asset('/sandeep/img/svg_icon/3.svg')}}" alt="">
                         </div>
-                        <h3>Mobile app</h3>
+                        <h3>Web development</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                 <div class="col-xl-5 col-md-5">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
-                            <img src="{{ asset('uploads/profile/') }}/{{$profiledetail->url}}" alt="">
+                            <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
                         </div>
                         <a href="img/portfolio/1.png" class="popup popup-image"></a>
                         <div class="portfolio_hover">
@@ -114,7 +114,7 @@
                 <div class="col-xl-7 col-md-7">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
-                            <img src="{{ asset('uploads/profile/') }}/{{$profiledetail->url}}" alt="">
+                            <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
                         </div>
                         <a href="img/portfolio/2.png" class="popup popup-image"></a>
                         <div class="portfolio_hover">
@@ -127,7 +127,7 @@
                 <div class="col-xl-4 col-md-6 col-lg-4">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
-                            <img src="{{ asset('uploads/profile/') }}/{{$profiledetail->url}}" alt="">
+                            <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
                         </div>
                         <a href="img/portfolio/3.png" class="popup popup-image"></a>
                         <div class="portfolio_hover">
@@ -140,7 +140,7 @@
                 <div class="col-xl-4 col-md-6 col-lg-4">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
-                            <img src="{{ asset('uploads/profile/') }}/{{$profiledetail->url}}" alt="">
+                            <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
                         </div>
                         <a href="img/portfolio/4.png" class="popup popup-image"></a>
                         <div class="portfolio_hover">
@@ -153,7 +153,7 @@
                 <div class="col-xl-4 col-md-12 col-lg-4">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
-                            <img src="{{ asset('uploads/profile/') }}/{{$profiledetail->url}}" alt="">
+                            <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
                         </div>
                         <a href="img/portfolio/5.png" class="popup popup-image"></a>
                         <div class="portfolio_hover">
@@ -200,7 +200,7 @@
                             <img src="" alt="">
                         </div>
                         <div class="my_Pic">
-                                <img src="{{ asset('uploads/profile/') }}/{{$profiledetail->url}}" alt="">
+                                <img src="{{ asset('uploads/profile/') }}/{{$profile[0]->url}}" alt="">
                         </div>
                     </div>
                 </div>

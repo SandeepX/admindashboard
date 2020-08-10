@@ -69,6 +69,13 @@
     <script src="{{asset('sandeep/js/mail-script.js')}}"></script>
 
     <script src="{{asset('sandeep/js/main.js')}}"></script>
+
+
+    <script src="{{'admin/assets/js/jquery.min.js'}}"></script>
+    <script src="{{'admin/assets/js/jquery.poptrox.min.js'}}"></script>
+    <script src="{{'admin/assets/js/skel.min.js'}}"></script>
+    <script src="{{'admin/assets/js/util.js'}}"></script>
+    <script src="{{'admin/assets/js/main.js'}}"></script>
 </body>
 
 </html>

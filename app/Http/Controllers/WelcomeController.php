@@ -9,13 +9,13 @@ use App\Gallery;
 class WelcomeController extends Controller
 {
     public function index(){
-	    $profile = Profile::all();
+	    $profile = Profile::latest()->take(1)->get();
 	    return view('welcome')->with('profile', $profile);
 	}
 
 
     public function galleryshow(){
-    	$data = Gallery::where('id','>=','1')->paginate(5);
+    	$data = Gallery::paginate(5);
     	// dd($gallery);
     	return view('frontend.galleryshow',compact('data'));
 	}

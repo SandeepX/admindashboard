@@ -10,10 +10,6 @@
 
 
 @section('main-content')
-  <section class="content">
-    <div class="container-fluid ">
-
-		
 		@if (count($errors) > 0)
 	      <div class="alert alert-danger">
 	        <strong>Sorry !</strong> There were some problems with your input.<br><br>
@@ -30,6 +26,11 @@
 	          {{ session('success') }}
 	        </div> 
 	    @endif
+  <section class="content">
+    <div class="container-fluid ">
+
+		
+		
 
 
 
