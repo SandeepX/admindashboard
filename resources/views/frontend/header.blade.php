@@ -61,7 +61,7 @@
                         <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
-                                    <a  href="{{route('ContactMe')}}">Contact Me</a>
+                                    <a  href="{{route('Blog.index')}}">Blogs</a>
                                 </div>
                             </div>
                         </div>

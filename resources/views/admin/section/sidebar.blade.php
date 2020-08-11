@@ -161,74 +161,74 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <ul class="nav nav-treeview">
-               <li class="nav-item has-treeview has-treeview menu-open">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Admin panel
-                <i class="fas fa-angle-left right"></i>
-               
-              </p>
-            </a>
-
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{('/profile')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Profile</p>
-                </a>
-              </li>
-              
-              <li class="nav-item">
-                <a href="{{('/gallery')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Upload Image </p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="{{('/video')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Upload Video </p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="{{('/project')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Project completed</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/blog')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Blog</p>
-                </a>
-              </li>
-              
-              <li class="nav-item">
-                <a href="{{url('/contact')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Contact</p>
-                </a>
-              </li>
-              
-              </li>
-            </ul>
-          </li>
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="      menu" data-accordion="false">
           
-              
-            </ul>
-          </li>
+            <li class="nav-item has-treeview menu-open">
+              <ul class="nav nav-treeview">
+                <li class="nav-item has-treeview has-treeview menu-open">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-copy"></i>
+                    <p>
+                      Admin panel
+                      <i class="fas fa-angle-left right"></i>
+                     
+                    </p>
+                  </a>
+
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="{{('/profile')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Profile</p>
+                      </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a href="{{('/gallery')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p> Upload Image </p>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="{{('/video')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Upload Video </p>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="{{('/project')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Project</p>
+                      </a>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                      <a href="{{url('/contact')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Contact</p>
+                      </a>
+                    </li>
+
+                    
+
+                    <li class="nav-item">
+                      <a href="{{url('/blog')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Blog</p>
+                      </a>
+                    </li>
+                    
+                    
+                  </ul>  
+                </li>
+              </ul>
+            </li>
           
-         
-          
-        </ul>
+          </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>

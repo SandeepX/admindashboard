@@ -3,23 +3,16 @@
 use Illuminate\Support\Facades\Route;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+
 Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-// <----frontend route------>
+/****************download******************/
 Route::get('/download', function(){
 	$file = public_path()."/sandeep.docx";
 	$headers =array(
@@ -34,6 +27,10 @@ Route::get('/download', function(){
 Route::get('/', 'welcomeController@index')->name('mainHome');
 Route::get('/viewImage', 'welcomeController@galleryshow')->name('viewGallery');
 Route::get('/about','AboutController@index')->name('about');
+
+Route::resource('/Blog','FrontendController');
+Route::resource('/Blog/{$id}','FrontendController');
+//Route::get('/Blog/{$id}','FrontendController@getBlogbyid')->name('detailblog');
 	
 
 
@@ -50,7 +47,7 @@ Route::group(['middleware' => 'auth'], function (){
 	    return view('admin.dashboard');
 	});
 
-
+	/****************profile******************/
 	Route::prefix('profile')->group(function () {
 		Route::get('/', 'ProfileController@index')->name('profile');
 		Route::post('/store', 'ProfileController@store')->name('imageUpload');
@@ -58,13 +55,16 @@ Route::group(['middleware' => 'auth'], function (){
 	});
 
 
+
+	/****************gallery******************/
 	Route::prefix('/gallery')->group(function () {
 		Route::get('/', 'GalleryController@index')->name('gallery');
 		Route::post('/store','GalleryController@store')->name('imageuploadgallery');
 
 	});
 
-	
+
+	/****************video******************/
 	Route::resource('/video', 'VideoController');
 
 	
@@ -79,11 +79,13 @@ Route::group(['middleware' => 'auth'], function (){
 
 
 
-	// -----------blog-----------
+	/****************Blog******************/
 
-	Route::get('/blog', function () {
-	    return view('admin.Blog');
-	});
+	Route::resource('/blog', 'BlogController');
+
+
+
+	/**********************contact route*********************/
 
 	Route::get('/contact', 'AdmincontactController@index')->name('contact');
 	Route::delete('/contact/destroy/{id}','AdmincontactController@destroy')->name('contactdelete');
