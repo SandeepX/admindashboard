@@ -42,10 +42,9 @@ Route::post('/ContactMe/store','ContactController@store')->name('contactfront');
 //*****************-Backend routes-******************
 
 
-Route::group(['middleware' => 'auth'], function (){
-	Route::get('/dashboard', function () {
-	    return view('admin.dashboard');
-	});
+Route::group(['middleware' => ['auth','admin']], function (){
+	Route::get('/dashboard','HomeController@admin')->name('admin');
+	
 
 	/****************profile******************/
 	Route::prefix('profile')->group(function () {
@@ -91,4 +90,9 @@ Route::group(['middleware' => 'auth'], function (){
 	Route::delete('/contact/destroy/{id}','AdmincontactController@destroy')->name('contactdelete');
 	
 
+});
+
+Route::group(['prefix'=>'user','middleware'=>['auth']],
+	function(){
+		Route::get('/','HomeController@user')->name('user');
 });

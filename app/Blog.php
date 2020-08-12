@@ -17,7 +17,7 @@ class Blog extends Model
     		'description' => 'string|max:9000',
     		'author' => 'required|string|max:40',
     		'status' => 'required|in:active,inactive',
-    		'image' =>'sometimes|image|mimes:jpeg,png,svg|max:5120|max:4096'
+    		'image' =>'sometimes|mimes:jpeg,png,svg,mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:5120|max:10240'
     	];
     }
 

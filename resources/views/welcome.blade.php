@@ -57,7 +57,7 @@
 
                                     <div>
                                     
-                                       <p> {{ $value->description }} </p>
+                                       <p> {{ $value->description | substr:0,500 }} </p>
                                     </div> 
 
                                     <div>

@@ -28,11 +28,11 @@
 
                                     <div>
                                     
-                                       <p> {{ $blogdetail->summary }} </p>
+                                       <p> {{ $blogdetail->summary |  substr:0,200 }} </p>
                                     </div> 
 									
 									<div>
-                                    	<strong>Date:{{$blogdetail->created_at }} </strong> 
+                                    	<strong>Date:{{$blogdetail->created_at | date:'Y/m/d' }} </strong> 
                                     </div>
 
                                    
