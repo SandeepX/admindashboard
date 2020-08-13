@@ -81,6 +81,7 @@ Route::group(['middleware' => ['auth','admin']], function (){
 	/****************Blog******************/
 
 	Route::resource('/blog', 'BlogController');
+	
 
 
 

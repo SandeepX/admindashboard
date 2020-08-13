@@ -6,7 +6,7 @@
                         <div class="menu_links">
                             <ul>
                                 <li><a href="{{url('/about')}}">About</a></li>
-                                <li><a href="#">Services</a></li>
+                                <li><a href="{{route('Blog.index')}}">Blogs</a></li>
                                 <li><a href="{{route('mainHome')}}">Portfolio</a></li>
                             </ul>
                         </div>

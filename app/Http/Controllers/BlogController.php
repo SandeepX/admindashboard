@@ -36,6 +36,9 @@ class BlogController extends Controller
         return view('admin.blogcreate');
     }
 
+
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -103,9 +106,20 @@ class BlogController extends Controller
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit($id)
     {
-        //
+        $data = Blog::find($id);
+        //dd($data);
+        if($data){
+            return view('admin.blogcreate')
+            ->with('data', $data);
+
+        }else{
+
+            request()->session()->flash('error','blog with this id not found.');
+            return redirect()->route('blog.index');
+
+        }
     }
 
     /**
@@ -115,9 +129,49 @@ class BlogController extends Controller
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
-    {
-        //
+    public function update(Request $request, $id)
+    {  
+        $this->blog = $this->blog->find($id); 
+        
+        if (!$this->blog) {
+            $request->session()->flash('error','Blog not found'); 
+        return redirect()->route('blog.index');
+    }   
+        $rules = $this->blog->getRules();
+        $request->validate($rules);
+
+        $data = $request->all();
+        
+
+        
+
+        if($request->image){
+            $upload_dir = public_path().'/uploads/blog' ;
+            if(!File::exists($upload_dir)){
+                File::makeDirectory($upload_dir,0777,true,true);
+            }
+            $file_name = "Blog-".date('Ymdhis').rand(0,999).".".$request->image->getClientOriginalExtension();
+            $success = $request->image->move($upload_dir, $file_name);
+            if($success){
+                
+                $data['image'] = $file_name; 
+                @unlink($upload_dir.'/'.$this->blog->image); 
+                    
+            } else{
+                $data['image'] = null;
+            }
+
+        }
+
+        $this->blog->fill($data);
+        $status = $this->blog->save();
+        if($status){
+            $request->session()->flash('success','Blog updated successfully');
+        }else{
+             $request->session()->flash('error','Blog not updated ');
+
+        }
+        return redirect()->route('blog.index'); 
     }
 
     /**

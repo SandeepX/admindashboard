@@ -44,29 +44,30 @@
 
                                 <td>
                                     <span class="badge badge-{{ ( $blogdetail->status=='active') ? 'success':'danger'}}">{{ ucfirst ( $blogdetail->status ) }}</span> 
-                                     </td>
+                                </td>
+
                                 <td>
                                     
 
+                                    <a href="/blog/{{$blogdetail->id}}/edit"><button class="btn btn-primary  pull-left"><i class="fa fa-edit"></i></button></a>                                   
 
+                                    
 						
-								
-	                  	<form class="m-2" method="post" action="{{route('blog.destroy', $blogdetail->id)}}" onclick="return confirm('Are you sure?')">
-	                      @csrf
-	                      @method('delete')
-						<button type="submit" class="btn btn-danger">Delete</button>
+					   
 
-						</form>
+            	                  	<form  method="post" action="{{route('blog.destroy', $blogdetail->id)}}" onclick="return confirm('Are you sure?')">
+            	                      @csrf
+            	                      @method('delete')
+            						<button type="submit" class=" btn btn-danger form pull-left"><i class="fa fa-trash"></i></button>
 
-
-
-
+            						</form>
 
 
                                 </td>
                             </tr>
                         @endforeach        
                     @endif
+                    
                 </tbody>
             </table>
             {{ $blogData->links() }}
@@ -79,7 +80,14 @@
 </section>
 
 
-
+    @section('scripts')
+        <script>
+            $(document).ready( function(){
+              
+            });
+          
+        </script>
+    @endsection
 
 
 @endsection  
