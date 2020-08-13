@@ -63,9 +63,7 @@
                <!-- TO DO List -->
                
                   @livewire('todos')
-                  <!-- /.card-header -->
-                 
-                <!-- /.card -->
+                  
               </section>
             </div>
           </div>

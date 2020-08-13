@@ -10,8 +10,10 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{url('/dashboard')}}" class="nav-link">Home</a>
       </li>
+
+
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{url('/contact')}}" class="nav-link">Contact</a>
+        <a href="{{url('/contact')}}" class="nav-link">{{(auth()->user()->role =='admin')?'Contact':''}} </a>
       </li>
     </ul>
 
@@ -117,7 +119,7 @@
  -->
                         <li class="nav-item dropdown">
                           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                              {{ Auth::user()->name }} <span class="caret"></span>
+                             <strong> {{ ucfirst(Auth::user()->name) }}</strong>  <span class="caret"></span>
                           </a>
 
                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -144,7 +146,7 @@
     <a href="{{ url('/dashboard') }}" class="brand-link">
       <img src="{{asset('admin/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Admin dashboard</span>
+      <span class="brand-text font-weight-light">{{(auth()->user()->role =='admin')?'Admin':'User'}} dashboard</span>
     </a>
 
     <!-- Sidebar -->
@@ -154,10 +156,18 @@
         <div class="image">
           <img src="{{asset('admin/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
+
+      @if(auth()->user()->role=='admin')
         <div class="info">
           <a href="{{ url('/profile') }}" class="d-block">Sandeep pant</a>
         </div>
+      @else
+        <div class="info">
+          <a href="#" class="d-block">{{ ucfirst(Auth::user()->name) }}</a>
+        </div>
+      @endif
       </div>
+
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -169,12 +179,12 @@
                   <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-copy"></i>
                     <p>
-                      Admin panel
+                     {{(auth()->user()->role =='admin')?'Admin':'User'}} panel
                       <i class="fas fa-angle-left right"></i>
                      
                     </p>
                   </a>
-
+                @if(auth()->user()->role == 'admin')
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
                       <a href="{{('/profile')}}" class="nav-link">
@@ -212,7 +222,7 @@
                         <p>Contact</p>
                       </a>
                     </li>
-
+                  
                     
 
                     <li class="nav-item">
@@ -221,9 +231,23 @@
                         <p>Blog</p>
                       </a>
                     </li>
+
+                 </ul> 
+
+                  @else
+
+                  <ul class="nav nav-treeview">
                     
-                    
-                  </ul>  
+                    <li class="nav-item">
+                      <a href="{{url('/blog')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Blog</p>
+                      </a>
+                    </li>
+
+                  </ul>
+
+                  @endif 
                 </li>
               </ul>
             </li>

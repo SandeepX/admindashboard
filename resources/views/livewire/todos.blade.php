@@ -47,7 +47,7 @@
                     onclick="updateTodoPrompt('{{$todo->title}}') || event.stopImmediatePropagation()"
                     wire:click="updateTodo({{$todo->id}}, todoUpdated)"
                     >
-                    <strong class="$todo->completed ? 'completed':''">{{ $todo->title }}</strong>
+                    <strong class="$todo->completed ? 'completed':''">{{ $todo->title }}</strong><span style="margin-left: 10px">{{ $todo->created_at | date:'Y/m/d'}} </span>
                 </a>
               </div>
               <div>
