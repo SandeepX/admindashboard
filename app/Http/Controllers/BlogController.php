@@ -86,7 +86,11 @@ class BlogController extends Controller
              $request->session()->flash('error','Blog not added ');
 
         }
-        return redirect()->route('blog.index');
+        if(auth()->user()->role=='admin'){
+            return redirect()->route('blog.index');
+        }else{
+           return redirect()->route(auth()->user()->role);
+        }
     }
 
     /**

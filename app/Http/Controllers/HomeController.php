@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Blog;
 
 class HomeController extends Controller
 {
@@ -33,8 +34,12 @@ class HomeController extends Controller
 
     public function user()
     {
-        return view('home');
+        $blogData = Blog::latest()->paginate(5);
+
+        return view('home')->with('blogData',$blogData);;
     }
+
+    
 
 
 }

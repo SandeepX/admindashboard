@@ -15,7 +15,7 @@ class FrontendController extends Controller
     public function index()
     {
 
-        $blogData = Blog::latest()->paginate(6);
+        $blogData = Blog::where('status','!=','inactive')->latest()->paginate(6);
         return view('frontend.blogs')->with('blogData',$blogData);
     }
 

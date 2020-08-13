@@ -179,7 +179,7 @@
                   <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-copy"></i>
                     <p>
-                     {{(auth()->user()->role =='admin')?'Admin':'User'}} panel
+                     {{(auth()->user()->role =='admin')?'Admin':'Blog'}} 
                       <i class="fas fa-angle-left right"></i>
                      
                     </p>
@@ -239,9 +239,9 @@
                   <ul class="nav nav-treeview">
                     
                     <li class="nav-item">
-                      <a href="{{url('/blog')}}" class="nav-link">
+                      <a href="{{route('blog.create')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Blog</p>
+                        <p>Add Blog</p>
                       </a>
                     </li>
 

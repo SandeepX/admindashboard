@@ -80,8 +80,8 @@ Route::group(['middleware' => ['auth','admin']], function (){
 
 	/****************Blog******************/
 
-	Route::resource('/blog', 'BlogController');
-	
+	Route::resource('/blog', 'BlogController')->withoutmiddleware('admin');
+
 
 
 
@@ -96,4 +96,5 @@ Route::group(['middleware' => ['auth','admin']], function (){
 Route::group(['prefix'=>'user','middleware'=>['auth']],
 	function(){
 		Route::get('/','HomeController@user')->name('user');
+		
 });

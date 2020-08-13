@@ -24,7 +24,7 @@
 				<label for="Title">Title:</label>
 				<input type="text" class="form-control" 
 					id="title" 
-					value="{{$data->title}}" 
+					value="{{isset($data)? '$data->title':''}}" 
 					name="title"
 					placeholder="Enter Blog title...">
 			</div>
@@ -36,7 +36,7 @@
 					name="summary"
 					placeholder="summary..."
 					rows="2">
-					{{$data->summary}}
+					{{isset($data)? '$data->summary':''}}
 				</textarea>
 			</div>
 
@@ -47,7 +47,7 @@
 					name="description"
 					 
 					rows="5">
-					{{$data->description}}
+					{{isset($data)? '$data->description':''}}
 	
 				</textarea>
 			</div>
@@ -57,23 +57,28 @@
 				<input type="text" class="form-control" 
 					id="author" 
 					name="author" 
-					value="{{$data->author}}" 
+					value="{{isset($data)? '$data->author':''}}" 
 					placeholder="Enter Author...">
 			</div>
 
-			<div class="form-group">
-				<label for="status">Status</label>
-				<select class="form-control" id="status"  name="status" value="{{$data->status}}">
 
-					<option value="inactive">Inactive</option>
-					<option value="active">Active</option>
-					
-				</select>
-			</div>
+			@if(auth()->user()->role !='user')
+				<div class="form-group">
+					<label for="status">Status</label>
+					<select class="form-control" id="status"  name="status" value="{{ isset($data)? '$data->status':''}}">
 
-            <div class="form-group">
-                <img src="{{asset('uploads/blog/'.$data->image)}}" class="img img-thumbnail img-responsive" style="width: 140px; height:150px;" alt="">
-            </div>
+						<option value="inactive">Inactive</option>
+						<option value="active">Active</option>
+						
+					</select>
+				</div>
+			@endif
+			
+			@if(isset($data))
+	            <div class="form-group">
+	                <img src="{{asset('uploads/blog/'.$data->image)}}" class="img img-thumbnail img-responsive" style="width: 140px; height:150px;" alt="">
+	            </div>
+            @endif
 
 			<div class="form-group">
 				<label for="image">Image Upload</label>
